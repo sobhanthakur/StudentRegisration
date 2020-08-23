@@ -58,11 +58,12 @@ const StudentForm = ({ student }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    student
-      ? await dispatch(updateStudent(student._id, formData))
-      : await dispatch(addStudent(formData));
-    setLoading(false);
-    setFormData(initialState);
+    if (student) {
+      await dispatch(updateStudent(student._id, formData))
+    } else {
+      await dispatch(addStudent(formData));
+      setFormData(initialState);
+    }
   };
 
   return (
