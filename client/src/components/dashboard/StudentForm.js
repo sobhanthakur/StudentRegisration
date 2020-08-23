@@ -110,7 +110,7 @@ const StudentForm = ({ student }) => {
           <FormGroup>
             <Label for="mobileno">Mobile No.</Label>
             <Input
-              type="text"
+              type="number"
               name="mobileno"
               value={mobileno}
               onChange={(e) => changeFormData(e)}
