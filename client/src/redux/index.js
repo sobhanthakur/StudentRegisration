@@ -1,0 +1,10 @@
+import { combineReducers } from "redux";
+import alertReducer from './reducers/alertReducer'
+import authReducer from './reducers/authReducer'
+import studentReducer from './reducers/studentReducer'
+
+export default combineReducers({
+    alertReducer,
+    authReducer,
+    studentReducer
+});
