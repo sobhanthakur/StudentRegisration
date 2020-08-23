@@ -1,3 +1,3 @@
 module.exports = Object.freeze({
-  token_expiry: 3600,
+  token_expiry: 300,
 });
