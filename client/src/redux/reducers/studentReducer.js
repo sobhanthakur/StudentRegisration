@@ -1,4 +1,10 @@
-import { LOAD_STUDENT, UPDATE_STUDENT, CLEAR_STUDENT } from "../types";
+import {
+  LOAD_STUDENT,
+  UPDATE_STUDENT,
+  CLEAR_STUDENT,
+  ADD_STUDENT,
+  DELETE_STUDENT,
+} from "../types";
 
 const initialState = {
   loading: true,
@@ -38,6 +44,18 @@ const studentReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         students: [],
+      };
+    case ADD_STUDENT:
+      return {
+        ...state,
+        loading: false,
+        students: [payload, ...state.students],
+      };
+    case DELETE_STUDENT:
+      return {
+        ...state,
+        students: state.students.filter((student) => student._id !== payload),
+        loading: false,
       };
     default:
       return state;

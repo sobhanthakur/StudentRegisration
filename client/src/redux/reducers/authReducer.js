@@ -4,7 +4,8 @@ import {
   AUTH_ERROR,
   REGISTER_FAIL,
   LOGOUT,
-  USER_LOADED
+  USER_LOADED,
+  REGISTER_SUCCESS
 } from "../types";
 
 const initialState = {
@@ -25,6 +26,7 @@ const authReducer = (state = initialState, action) => {
         user: payload,
       };
     case LOGIN_SUCCESS:
+    case REGISTER_SUCCESS:
       localStorage.setItem("token", payload.token);
       return {
         ...state,

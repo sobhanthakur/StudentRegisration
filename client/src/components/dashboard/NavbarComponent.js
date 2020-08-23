@@ -8,10 +8,13 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/actions/authAction";
 
 const NavbarComponent = () => {
   const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -27,6 +30,11 @@ const NavbarComponent = () => {
             </NavItem>
             <NavItem>
               <NavLink href="/students/">View Students</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/" onClick={e => dispatch(logout())}>
+                Logout
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

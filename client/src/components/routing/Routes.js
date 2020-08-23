@@ -6,14 +6,20 @@ import NavbarComponent from "../dashboard/NavbarComponent";
 import StudentRegistration from "../dashboard/StudentRegistration";
 import StudentView from "../dashboard/StudentView";
 import PrivateRoute from "../routing/PrivateRoute";
+import { useSelector } from "react-redux";
+import Register from "../auth/Register";
 
 const Routes = (props) => {
+  const state = useSelector((state) => ({
+    auth: state.authReducer.isAuthenticated,
+  }));
   return (
     <div className="container">
       <AlertComponent></AlertComponent>
-      {/* <NavbarComponent></NavbarComponent> */}
+      {state.auth && <NavbarComponent></NavbarComponent>}
       <Switch>
         <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/dashboard" component={StudentRegistration} />
         <PrivateRoute exact path="/students" component={StudentView} />
       </Switch>

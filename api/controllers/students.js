@@ -23,7 +23,6 @@ router.post(
     check("gender", "gender must be present").not().isEmpty(),
     check("dob", "dob must be present").not().isEmpty(),
     check("country", "country must be present").not().isEmpty(),
-    check("images", "images must be present").not().isEmpty(),
     check("email", "Please Include a valid email").isEmail(),
   ],
   (req, res) => {

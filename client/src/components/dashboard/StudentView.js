@@ -26,6 +26,7 @@ const StudentView = () => {
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th>Remove</th>
                 <th>Actions</th>
               </tr>
             </thead>

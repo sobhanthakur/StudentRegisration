@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import StudentForm from "./StudentForm";
 
 const StudentRegistration = () => {
-    return (
-        <div>
-            Registrations
-        </div>
-    )
-}
+  return (
+    <div className="container mt-5">
+      <StudentForm></StudentForm>
+    </div>
+  );
+};
 
-export default StudentRegistration
+export default StudentRegistration;
