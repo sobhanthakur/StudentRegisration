@@ -64,6 +64,7 @@ const StudentForm = ({ student }) => {
       await dispatch(addStudent(formData));
       setFormData(initialState);
     }
+    setLoading(false);
   };
 
   return (
